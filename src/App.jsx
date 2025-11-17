@@ -1,28 +1,36 @@
-import { useState } from 'react'
+import React from 'react'
+import Hero from './components/Hero'
+import Why from './components/Why'
+import Juices from './components/Juices'
+import Contact from './components/Contact'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-[#f8f5f2] text-rose-900">
+      <header className="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-white/50 border-b border-rose-900/10">
+        <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
+          <a href="#" className="font-black tracking-wide text-rose-900">Rodzinny Sad</a>
+          <nav className="flex gap-5 text-sm">
+            <a href="#why" className="hover:text-rose-700 transition-colors">Dlaczego my</a>
+            <a href="#juices" className="hover:text-rose-700 transition-colors">Nasze soki</a>
+            <a href="#contact" className="hover:text-rose-700 transition-colors">Kontakt</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <Why />
+        <Juices />
+        <Contact />
+      </main>
+
+      <footer className="border-t border-rose-900/10 bg-rose-50">
+        <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-rose-900/70 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p>© {new Date().getFullYear()} Rodzinny Sad • Wszystkie prawa zastrzeżone</p>
+          <p>Naturalnie tłoczone soki • Bag‑in‑Box • Polska</p>
+        </div>
+      </footer>
     </div>
   )
 }
-
-export default App
